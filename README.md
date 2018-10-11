@@ -11,7 +11,7 @@ Ubuntu 18.04 Latest
 5. Wavefront Install
 6. Fluentd Install
 
-# DB1 Server
+# DB1 Server - Please use the VCS-CTS default username and password (Ask Sean)
 
 Ubuntu 18.04 Latest
 1. Hosts File
@@ -30,15 +30,15 @@ Ubuntu 18.04 Latest
         truncate polls_prospect;
         alter table polls_prospect AUTO_INCREMENT = 1;
         select * from polls_prospect;
-        ALTER USER 'root'@'localhost' IDENTIFIED BY 'VMware1!';
-        GRANT ALL PRIVILEGES ON *.* TO 'db_app_user'@'%' IDENTIFIED BY 'VMware1!';
+        ALTER USER 'root'@'localhost' IDENTIFIED BY 'abc123';
+        GRANT ALL PRIVILEGES ON *.* TO 'db_user'@'%' IDENTIFIED BY 'abc123';
         CREATE USER 'haproxy_check'@'%';
         FLUSH PRIVILEGES;
         Quit;
     ## Restart Mysql Service
         sudo systemctl restart mysql.service
 
-# DB1 Server
+# DB2 Server - Please use the VCS-CTS default username and password (Ask Sean)
 
 Ubuntu 18.04 Latest
 1. Hosts File
@@ -57,8 +57,8 @@ Ubuntu 18.04 Latest
         truncate polls_prospect;
         alter table polls_prospect AUTO_INCREMENT = 1;
         select * from polls_prospect;
-        ALTER USER 'root'@'localhost' IDENTIFIED BY 'VMware1!';
-        GRANT ALL PRIVILEGES ON *.* TO 'db_app_user'@'%' IDENTIFIED BY 'VMware1!';
+        ALTER USER 'root'@'localhost' IDENTIFIED BY 'abc123';
+        GRANT ALL PRIVILEGES ON *.* TO 'db_user'@'%' IDENTIFIED BY 'abc123';
         CREATE USER 'haproxy_check'@'%';
         FLUSH PRIVILEGES;
         Quit;
