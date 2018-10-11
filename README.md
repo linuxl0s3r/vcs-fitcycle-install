@@ -22,19 +22,18 @@ Ubuntu 18.04 Latest
             Update bind-address 0.0.0.0
     ## Connect to Mysql
         sudo mysql -u root -p -h localhost
-    ## Create and populate Prospect DB
+    ## Connect to Mysql
+        sudo mysql -u root -p -h localhost
+    ## Create and assign permissions Prospect DB
         CREATE DATABASE prospect;
         use prospect;
-        ### Merge DB
-            Paste mysqldbump.txt into mysql
-        truncate polls_prospect;
-        alter table polls_prospect AUTO_INCREMENT = 1;
-        select * from polls_prospect;
         ALTER USER 'root'@'localhost' IDENTIFIED BY 'abc123';
         GRANT ALL PRIVILEGES ON *.* TO 'db_user'@'%' IDENTIFIED BY 'abc123';
         CREATE USER 'haproxy_check'@'%';
         FLUSH PRIVILEGES;
         Quit;
+    ## Restore Prospect DB
+        sudo mysql -u root -p prospect < prospect_backup.sql
     ## Restart Mysql Service
         sudo systemctl restart mysql.service
 
@@ -49,19 +48,16 @@ Ubuntu 18.04 Latest
             Update bind-address 0.0.0.0
     ## Connect to Mysql
         sudo mysql -u root -p -h localhost
-    ## Create and populate Prospect DB
+    ## Create and assign permissions Prospect DB
         CREATE DATABASE prospect;
         use prospect;
-        ### Merge DB
-            Paste mysqldbump.txt into mysql
-        truncate polls_prospect;
-        alter table polls_prospect AUTO_INCREMENT = 1;
-        select * from polls_prospect;
         ALTER USER 'root'@'localhost' IDENTIFIED BY 'abc123';
         GRANT ALL PRIVILEGES ON *.* TO 'db_user'@'%' IDENTIFIED BY 'abc123';
         CREATE USER 'haproxy_check'@'%';
         FLUSH PRIVILEGES;
         Quit;
+    ## Restore Prospect DB
+        sudo mysql -u root -p prospect < prospect_backup.sql
     ## Restart Mysql Service
         sudo systemctl restart mysql.service
 
