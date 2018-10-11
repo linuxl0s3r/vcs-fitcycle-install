@@ -1,0 +1,5 @@
+#!/bin/bash
+#Add this script to /etc/cron.daily
+service nginx stop
+sleep 15m
+service nginx start
