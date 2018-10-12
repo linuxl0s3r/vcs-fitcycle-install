@@ -9,7 +9,14 @@ Ubuntu 18.04 Latest
 4. MySQL Client insatll
     sudo apt-get install mysql-client -y
 5. Wavefront Install
-6. Fluentd Install
+6. Fluentd Setup/Config
+    ## Install
+        sudo curl -L https://toolbelt.treasuredata.com/sh/install-ubuntu-bionic-td-agent3.sh | sh
+    ## Update Config File
+        Navigate to https://github.com/theseanodell/vcs-fitcycle-fluentd
+        Copy and Update config file with necessary parameters - see readme in repo
+    ## Restart tdagent
+        sudo systemctl restart td-agent
 
 # DB1 Server - Please use the VCS-CTS default username and password (Ask Sean)
 
@@ -36,6 +43,15 @@ Ubuntu 18.04 Latest
         sudo mysql -u root -p prospect < prospect_backup.sql
     ## Restart Mysql Service
         sudo systemctl restart mysql.service
+3. Wavefront Install
+4. Fluentd Setup/Config
+    ## Install
+        sudo curl -L https://toolbelt.treasuredata.com/sh/install-ubuntu-bionic-td-agent3.sh | sh
+    ## Update Config File
+        Navigate to https://github.com/theseanodell/vcs-fitcycle-fluentd
+        Copy and Update config file with necessary parameters - see readme in repo
+    ## Restart tdagent
+        sudo systemctl restart td-agent
 
 # DB2 Server - Please use the VCS-CTS default username and password (Ask Sean)
 
@@ -60,6 +76,15 @@ Ubuntu 18.04 Latest
         sudo mysql -u root -p prospect < prospect_backup.sql
     ## Restart Mysql Service
         sudo systemctl restart mysql.service
+3. Wavefront Install
+4. Fluentd Setup/Config
+    ## Install
+        sudo curl -L https://toolbelt.treasuredata.com/sh/install-ubuntu-bionic-td-agent3.sh | sh
+    ## Update Config File
+        Navigate to https://github.com/theseanodell/vcs-fitcycle-fluentd
+        Copy and Update config file with necessary parameters - see readme in repo
+    ## Restart tdagent
+        sudo systemctl restart td-agent
 
 # DBLB Server
 
@@ -71,7 +96,14 @@ Ubuntu 18.04 Latest
     haproxy -c -f /etc/haproxy/haproxy.cfg
     sudo service haproxy restart
 3. Wavefront Install
-4. Fluentd Install
+4. Fluentd Setup/Config
+    ## Install
+        sudo curl -L https://toolbelt.treasuredata.com/sh/install-ubuntu-bionic-td-agent3.sh | sh
+    ## Update Config File
+        Navigate to https://github.com/theseanodell/vcs-fitcycle-fluentd
+        Copy and Update config file with necessary parameters - see readme in repo
+    ## Restart tdagent
+        sudo systemctl restart td-agent
 
 #### Test Remote connectivity to MySQL Servers (Directly and via HAproxy)
 
@@ -85,7 +117,14 @@ Ubuntu 18.04 Latest
 1. Hosts File
 2. Follow steps in readme: https://github.com/theseanodell/vcs-fitcycle
 3. Wavefront Install
-4. Fluentd Install
+4. Fluentd Setup/Config
+    ## Install
+        sudo curl -L https://toolbelt.treasuredata.com/sh/install-ubuntu-bionic-td-agent3.sh | sh
+    ## Update Config File
+        Navigate to https://github.com/theseanodell/vcs-fitcycle-fluentd
+        Copy and Update config file with necessary parameters - see readme in repo
+    ## Restart tdagent
+        sudo systemctl restart td-agent
 
 # APP2 Server
 
@@ -93,7 +132,14 @@ Ubuntu 18.04 Latest
 1. Hosts File
 2. Follow steps in readme: https://github.com/theseanodell/vcs-fitcycle
 3. Wavefront Install
-4. Fluentd Install
+4. Fluentd Setup/Config
+    ## Install
+        sudo curl -L https://toolbelt.treasuredata.com/sh/install-ubuntu-bionic-td-agent3.sh | sh
+    ## Update Config File
+        Navigate to https://github.com/theseanodell/vcs-fitcycle-fluentd
+        Copy and Update config file with necessary parameters - see readme in repo
+    ## Restart tdagent
+        sudo systemctl restart td-agent
 
 # API1 Server
 
@@ -101,7 +147,14 @@ Ubuntu 18.04 Latest
 1. Hosts File
 2. Follow steps in readme: https://github.com/theseanodell/vcs-apiserver
 3. Wavefront Install
-4. Fluentd Install
+4. Fluentd Setup/Config
+    ## Install
+        sudo curl -L https://toolbelt.treasuredata.com/sh/install-ubuntu-bionic-td-agent3.sh | sh
+    ## Update Config File
+        Navigate to https://github.com/theseanodell/vcs-fitcycle-fluentd
+        Copy and Update config file with necessary parameters - see readme in repo
+    ## Restart tdagent
+        sudo systemctl restart td-agent
 
 # API2 Server
 
@@ -109,7 +162,14 @@ Ubuntu 18.04 Latest
 1. Hosts File
 2. Follow steps in readme: https://github.com/theseanodell/vcs-apiserver
 3. Wavefront Install
-4. Fluentd Install
+4. Fluentd Setup/Config
+    ## Install
+        sudo curl -L https://toolbelt.treasuredata.com/sh/install-ubuntu-bionic-td-agent3.sh | sh
+    ## Update Config File
+        Navigate to https://github.com/theseanodell/vcs-fitcycle-fluentd
+        Copy and Update config file with necessary parameters - see readme in repo
+    ## Restart tdagent
+        sudo systemctl restart td-agent
 
 # WEB1 Server
 
@@ -120,7 +180,14 @@ Ubuntu 18.04 Latest
     replace /etc/nginx/nginx.conf with config_files/nginx.conf
     sudo systemctl restart nginx
 3. Wavefront Install
-4. Fluentd Install
+4. Fluentd Setup/Config
+    ## Install
+        sudo curl -L https://toolbelt.treasuredata.com/sh/install-ubuntu-bionic-td-agent3.sh | sh
+    ## Update Config File
+        Navigate to https://github.com/theseanodell/vcs-fitcycle-fluentd
+        Copy and Update config file with necessary parameters - see readme in repo
+    ## Restart tdagent
+        sudo systemctl restart td-agent
 5. Create cron jobs for Nginx
     ## Installs and configures Cron jobs for Nginx stop / start for WF.
         wget https://github.com/theseanodell/vcs-fitcycle-install/raw/master/generatecron/generatenginxcron
@@ -137,4 +204,11 @@ Ubuntu 18.04 Latest
     replace /etc/nginx/nginx.conf with config_files/nginx.conf
     sudo systemctl restart nginx
 3. Wavefront Install
-4. Fluentd Install
+4. Fluentd Setup/Config
+    ## Install
+        sudo curl -L https://toolbelt.treasuredata.com/sh/install-ubuntu-bionic-td-agent3.sh | sh
+    ## Update Config File
+        Navigate to https://github.com/theseanodell/vcs-fitcycle-fluentd
+        Copy and Update config file with necessary parameters - see readme in repo
+    ## Restart tdagent
+        sudo systemctl restart td-agent
