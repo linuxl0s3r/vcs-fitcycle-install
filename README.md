@@ -18,7 +18,7 @@ Ubuntu 18.04 Latest
     ## Restart tdagent
         sudo systemctl restart td-agent
 
-# DB1 Server - Please use the VCS-CTS default username and password (Ask Sean)
+# DB1 Server
 
 Ubuntu 18.04 Latest
 1. Hosts File
@@ -31,13 +31,14 @@ Ubuntu 18.04 Latest
         sudo mysql -u root -p -h localhost
     ## Connect to Mysql
         sudo mysql -u root -p -h localhost
+    ## Create users and passwords (CHANGE Identified by fields with default passwords)
+        ALTER USER 'root'@'localhost' IDENTIFIED BY 'abc123';
+        GRANT ALL PRIVILEGES ON *.* TO 'db_app_user'@'%' IDENTIFIED BY 'abc123';
+        CREATE USER 'haproxy_check'@'%';
+        FLUSH PRIVILEGES;
     ## Create and assign permissions Prospect DB
         CREATE DATABASE prospect;
         use prospect;
-        ALTER USER 'root'@'localhost' IDENTIFIED BY 'abc123';
-        GRANT ALL PRIVILEGES ON *.* TO 'db_user'@'%' IDENTIFIED BY 'abc123';
-        CREATE USER 'haproxy_check'@'%';
-        FLUSH PRIVILEGES;
         Quit;
     ## Restore Prospect DB
         sudo mysql -u root -p prospect < prospect_backup.sql
@@ -53,7 +54,7 @@ Ubuntu 18.04 Latest
     ## Restart tdagent
         sudo systemctl restart td-agent
 
-# DB2 Server - Please use the VCS-CTS default username and password (Ask Sean)
+# DB2 Server
 
 Ubuntu 18.04 Latest
 1. Hosts File
@@ -64,13 +65,14 @@ Ubuntu 18.04 Latest
             Update bind-address 0.0.0.0
     ## Connect to Mysql
         sudo mysql -u root -p -h localhost
+    ## Create users and passwords (CHANGE Identified by fields with default passwords)
+        ALTER USER 'root'@'localhost' IDENTIFIED BY 'abc123';
+        GRANT ALL PRIVILEGES ON *.* TO 'db_app_user'@'%' IDENTIFIED BY 'abc123';
+        CREATE USER 'haproxy_check'@'%';
+        FLUSH PRIVILEGES;
     ## Create and assign permissions Prospect DB
         CREATE DATABASE prospect;
         use prospect;
-        ALTER USER 'root'@'localhost' IDENTIFIED BY 'abc123';
-        GRANT ALL PRIVILEGES ON *.* TO 'db_user'@'%' IDENTIFIED BY 'abc123';
-        CREATE USER 'haproxy_check'@'%';
-        FLUSH PRIVILEGES;
         Quit;
     ## Restore Prospect DB
         sudo mysql -u root -p prospect < prospect_backup.sql
