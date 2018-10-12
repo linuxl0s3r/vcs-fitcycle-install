@@ -189,11 +189,6 @@ Ubuntu 18.04 Latest
         Copy and Update config file with necessary parameters - see readme in repo
     ## Restart tdagent
         sudo systemctl restart td-agent
-5. Create cron jobs for Nginx
-    ## Installs and configures Cron jobs for Nginx stop / start for WF.
-        wget https://github.com/theseanodell/vcs-fitcycle-install/raw/master/generatecron/generatenginxcron
-        sudo chmod +x generatenginxcron
-        sudo mv generatenginxcron /etc/cron.daily
     
 
 # WEB2 Server
@@ -213,3 +208,15 @@ Ubuntu 18.04 Latest
         Copy and Update config file with necessary parameters - see readme in repo
     ## Restart tdagent
         sudo systemctl restart td-agent
+
+#### Problem Modifications
+
+# Web1
+
+1. Break Webq NGINX
+Create cron jobs for Nginx
+    ## Installs and configures Cron jobs for Nginx stop / start for WF.
+        wget https://github.com/theseanodell/vcs-fitcycle-install/raw/master/generatecron/generatenginxcron
+        sudo chmod +x generatenginxcron
+        sudo mv generatenginxcron /etc/cron.daily
+2.
