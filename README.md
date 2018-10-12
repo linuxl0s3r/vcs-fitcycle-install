@@ -12,6 +12,7 @@ Ubuntu 18.04 Latest
 6. Fluentd Setup/Config
     ## Install
         sudo curl -L https://toolbelt.treasuredata.com/sh/install-ubuntu-bionic-td-agent3.sh | sh
+        sudo /usr/sbin/td-agent-gem install fluent-plugin-out-http-ext
     ## Update Config File
         Navigate to https://github.com/theseanodell/vcs-fitcycle-fluentd
         Copy and Update config file with necessary parameters - see readme in repo
