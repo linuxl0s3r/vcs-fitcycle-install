@@ -36,9 +36,8 @@ Ubuntu 18.04 Latest
         GRANT ALL PRIVILEGES ON *.* TO 'db_app_user'@'%' IDENTIFIED BY 'abc123';
         CREATE USER 'haproxy_check'@'%';
         FLUSH PRIVILEGES;
-    ## Create and assign permissions Prospect DB
+    ## Create Prospect DB
         CREATE DATABASE prospect;
-        use prospect;
         Quit;
     ## Restore Prospect DB
         sudo mysql -u root -p prospect < prospect_backup.sql
@@ -70,9 +69,8 @@ Ubuntu 18.04 Latest
         GRANT ALL PRIVILEGES ON *.* TO 'db_app_user'@'%' IDENTIFIED BY 'abc123';
         CREATE USER 'haproxy_check'@'%';
         FLUSH PRIVILEGES;
-    ## Create and assign permissions Prospect DB
+    ## Create Prospect DB
         CREATE DATABASE prospect;
-        use prospect;
         Quit;
     ## Restore Prospect DB
         sudo mysql -u root -p prospect < prospect_backup.sql
