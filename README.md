@@ -121,7 +121,8 @@ Ubuntu 18.04 Latest
     sudo systemctl restart nginx
 3. Wavefront Install
 4. Fluentd Install
-5. Install bash script to create nginx stop cron job
+5. Create cron jobs for Nginx
+    ## Installs and configures Cron jobs for Nginx stop / start for WF.
         wget https://github.com/theseanodell/vcs-fitcycle-install/raw/master/generatecron/generatenginxcron
         sudo chmod +x generatenginxcron
         sudo mv generatenginxcron /etc/cron.daily
