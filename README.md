@@ -7,6 +7,7 @@ Ubuntu 18.04 Latest
 2. Hosts File
 3. Create RSA Key
 4. MySQL Client insatll
+    sudo apt-get update
     sudo apt-get install mysql-client -y
 5. Wavefront Install
 6. Fluentd Setup/Config
@@ -78,6 +79,13 @@ Ubuntu 18.04 Latest
     ## Restart Mysql Service
         sudo systemctl restart mysql.service
 3. Wavefront Install
+    ## Install
+        sudo curl -L https://toolbelt.treasuredata.com/sh/install-ubuntu-bionic-td-agent3.sh | sh
+    ## Update Config File
+        Navigate to https://github.com/theseanodell/vcs-fitcycle-fluentd
+        Copy and Update config file with necessary parameters - see readme in repo
+    ## Restart tdagent
+        sudo systemctl restart td-agent
 4. Fluentd Setup/Config
     ## Install
         sudo curl -L https://toolbelt.treasuredata.com/sh/install-ubuntu-bionic-td-agent3.sh | sh
@@ -176,7 +184,8 @@ Ubuntu 18.04 Latest
 
 Ubuntu 18.04 Latest
 1. Hosts File
-2. Install/Config HAProxy
+2. Install/Config NGINX
+    sudo apt-get update & sudo apt-get upgrade -y
     sudo apt-get install nginx -y
     replace /etc/nginx/nginx.conf with config_files/nginx.conf
     sudo systemctl restart nginx
@@ -195,7 +204,7 @@ Ubuntu 18.04 Latest
 
 Ubuntu 18.04 Latest
 1. Hosts File
-2. Install/Config HAProxy
+2. Install/Config NGINX
     sudo apt-get install nginx -y
     replace /etc/nginx/nginx.conf with config_files/nginx.conf
     sudo systemctl restart nginx
@@ -220,3 +229,34 @@ Create cron jobs for Nginx
         sudo chmod +x generatenginxcron
         sudo mv generatenginxcron /etc/cron.daily
 2.
+
+
+##### Hosted MySQL on Azure
+
+1. Allow Azure Resource Connectivity
+2. Install/Config Mysql
+    ## Connect to Mysql
+        sudo mysql -u root -p -h localhost
+    ## Create users and passwords (CHANGE Identified by fields with default passwords)
+        CREATE USER 'haproxy_check'@'%';
+        CREATE USER 'db_app_user'@'%' IDENTIFIED BY 'VMware1!';
+        GRANT ALL PRIVILEGES ON prospect . * TO 'db_app_user'@'%';
+        FLUSH PRIVILEGES;
+    ## Create Prospect DB
+        CREATE DATABASE prospect;
+        Quit;
+    ## Restore Prospect DB
+        sudo mysql -u root -p prospect < prospect_backup.sql
+
+##### Hosted MySQL on AWS RDS
+1. Setup and Configure RDS Instance
+2. Config MySQL
+    ## Connect to Mysql
+        sudo mysql -u root -p -h "db_instance"
+    ## Create users and passwords (CHANGE Identified by fields with default passwords)
+        CREATE USER 'haproxy_check'@'%';
+        CREATE USER 'db_app_user'@'%' IDENTIFIED BY 'VMware1!';
+        GRANT ALL PRIVILEGES ON prospect . * TO 'db_app_user'@'%';
+        FLUSH PRIVILEGES;
+    ## Restore Prospect DB
+        sudo mysql -h "db_instance" -u db_app_user -p prospect < prospect_backup.sql
