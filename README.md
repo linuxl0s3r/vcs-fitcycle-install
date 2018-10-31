@@ -6,7 +6,7 @@ Ubuntu 18.04 Latest
 1. Add Team Authorization Keys
 2. Hosts File
 3. Create RSA Key
-    ssh-keygen -b 4096
+    ``ssh-keygen -b 4096``
 4. MySQL Client insatll
     sudo apt-get update && sudo apt-get install mysql-client -y
 5. Wavefront Install
@@ -199,7 +199,7 @@ Ubuntu 18.04 Latest
         Copy and Update config file with necessary parameters - see readme in repo
     ## Restart tdagent
         sudo systemctl restart td-agent
-    
+
 
 # WEB2 Server
 
@@ -261,4 +261,3 @@ Create cron jobs for Nginx
         FLUSH PRIVILEGES;
     ## Restore Prospect DB
         sudo mysql -h "db_instance" -u db_app_user -p prospect < prospect_backup.sql
-        
