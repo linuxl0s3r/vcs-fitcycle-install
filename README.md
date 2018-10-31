@@ -6,13 +6,14 @@ Ubuntu 18.04 Latest
 1. Add Team Authorization Keys
 2. Hosts File
 3. Create RSA Key
+    ssh-keygen -b 4096
 4. MySQL Client insatll
-    sudo apt-get update
-    sudo apt-get install mysql-client -y
+    sudo apt-get update && sudo apt-get install mysql-client -y
 5. Wavefront Install
 6. Fluentd Setup/Config
-    ## Install
+    ## Install td-agent
         sudo curl -L https://toolbelt.treasuredata.com/sh/install-ubuntu-bionic-td-agent3.sh | sh
+    ## Install fluent-plugin-http-ext   
         sudo /usr/sbin/td-agent-gem install fluent-plugin-out-http-ext
     ## Update Config File
         Navigate to https://github.com/theseanodell/vcs-fitcycle-fluentd
@@ -260,3 +261,4 @@ Create cron jobs for Nginx
         FLUSH PRIVILEGES;
     ## Restore Prospect DB
         sudo mysql -h "db_instance" -u db_app_user -p prospect < prospect_backup.sql
+        
