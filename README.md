@@ -7,10 +7,10 @@ Ubuntu 18.04 Latest
 2. Hosts File
 3. Create RSA Key
     ## Run command
-      ssh-keygen -b 4096
+        ssh-keygen -b 4096
 4. MySQL Client install
     ## Run command
-      sudo apt-get update && sudo apt-get install mysql-client -y
+        sudo apt-get update && sudo apt-get install mysql-client -y
 5. Wavefront Install
 6. Fluentd Setup/Config
     ## Install td-agent
@@ -29,9 +29,9 @@ Ubuntu 18.04 Latest
 1. Hosts File
 2. Install/Config Mysql
     ## Run command
-      sudo apt-get install mysql-client mysql-server -y
+        sudo apt-get install mysql-client mysql-server -y
     ## Run command
-      sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
+        sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
     ## Connect to Mysql
         sudo mysql -u root -p -h localhost
     ## Connect to Mysql
