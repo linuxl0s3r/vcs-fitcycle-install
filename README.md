@@ -8,53 +8,53 @@ Ubuntu 18.04 Latest
 3. Create RSA Key
     ``ssh-keygen -b 4096``
 4. MySQL Client insatll
-    sudo apt-get update && sudo apt-get install mysql-client -y
+    ``sudo apt-get update && sudo apt-get install mysql-client -y```
 5. Wavefront Install
 6. Fluentd Setup/Config
     ## Install td-agent
-        sudo curl -L https://toolbelt.treasuredata.com/sh/install-ubuntu-bionic-td-agent3.sh | sh
+        ``sudo curl -L https://toolbelt.treasuredata.com/sh/install-ubuntu-bionic-td-agent3.sh | sh``
     ## Install fluent-plugin-http-ext   
-        sudo /usr/sbin/td-agent-gem install fluent-plugin-out-http-ext
+        ``sudo /usr/sbin/td-agent-gem install fluent-plugin-out-http-ext``
     ## Update Config File
         Navigate to https://github.com/theseanodell/vcs-fitcycle-fluentd
         Copy and Update config file with necessary parameters - see readme in repo
     ## Restart tdagent
-        sudo systemctl restart td-agent
+        ``sudo systemctl restart td-agent``
 
 # DB1 Server
 
 Ubuntu 18.04 Latest
 1. Hosts File
 2. Install/Config Mysql
-    sudo apt-get install mysql-client mysql-server -y
+    ``sudo apt-get install mysql-client mysql-server -y``
     ## Update Bind Address in Mysql Config
-        sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
+        ``sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf``
             Update bind-address 0.0.0.0
     ## Connect to Mysql
-        sudo mysql -u root -p -h localhost
+        ``sudo mysql -u root -p -h localhost``
     ## Connect to Mysql
-        sudo mysql -u root -p -h localhost
+        ``sudo mysql -u root -p -h localhost``
     ## Create users and passwords (CHANGE Identified by fields with default passwords)
-        ALTER USER 'root'@'localhost' IDENTIFIED BY 'abc123';
+        ``ALTER USER 'root'@'localhost' IDENTIFIED BY 'abc123';
         GRANT ALL PRIVILEGES ON *.* TO 'db_app_user'@'%' IDENTIFIED BY 'abc123';
         CREATE USER 'haproxy_check'@'%';
-        FLUSH PRIVILEGES;
+        FLUSH PRIVILEGES;``
     ## Create Prospect DB
-        CREATE DATABASE prospect;
-        Quit;
+        ``CREATE DATABASE prospect;
+        Quit;``
     ## Restore Prospect DB
-        sudo mysql -u root -p prospect < prospect_backup.sql
+        ``sudo mysql -u root -p prospect < prospect_backup.sql``
     ## Restart Mysql Service
-        sudo systemctl restart mysql.service
+        ``sudo systemctl restart mysql.service``
 3. Wavefront Install
 4. Fluentd Setup/Config
     ## Install
-        sudo curl -L https://toolbelt.treasuredata.com/sh/install-ubuntu-bionic-td-agent3.sh | sh
+        ``sudo curl -L https://toolbelt.treasuredata.com/sh/install-ubuntu-bionic-td-agent3.sh | sh``
     ## Update Config File
         Navigate to https://github.com/theseanodell/vcs-fitcycle-fluentd
         Copy and Update config file with necessary parameters - see readme in repo
     ## Restart tdagent
-        sudo systemctl restart td-agent
+        ``sudo systemctl restart td-agent``
 
 # DB2 Server
 
