@@ -1,5 +1,5 @@
 # vcs-fitcycle-install
-Test New
+
 ## Management Server
 
 Ubuntu 18.04 Latest
