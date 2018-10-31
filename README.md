@@ -7,8 +7,8 @@ Ubuntu 18.04 Latest
 2. Hosts File
 3. Create RSA Key
     ``ssh-keygen -b 4096``
-4. MySQL Client insatll
-    ``sudo apt-get update && sudo apt-get install mysql-client -y```
+4. MySQL Client install
+    ``sudo apt-get update && sudo apt-get install mysql-client -y``
 5. Wavefront Install
 6. Fluentd Setup/Config
     ## Install td-agent
