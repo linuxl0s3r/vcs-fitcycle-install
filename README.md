@@ -29,9 +29,9 @@ Ubuntu 18.04 Latest
 1. Hosts File
 2. Install/Config Mysql
     ## Run command
-        sudo apt-get install mysql-client mysql-server -y
+        ``sudo apt-get install mysql-client mysql-server -y``
     ## Update Bind Address to 0.0.0.0 in Mysql Config
-        sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
+        ``sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf``
     ## Connect to Mysql
         sudo mysql -u root -p -h localhost
     ## Connect to Mysql
