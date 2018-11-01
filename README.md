@@ -10,7 +10,7 @@ Ubuntu 18.04 Latest
         ssh-keygen -b 4096
 4. MySQL Client install
     ## Run command
-        sudo apt-get update && sudo apt-get install mysql-client -y
+        sudo apt-get update && sudo apt-get install mysql-client -y && sudo apt-get update && sudo apt-get upgrade
 5. Wavefront Install
 6. Fluentd Setup/Config
     ## Install td-agent
@@ -29,7 +29,7 @@ Ubuntu 18.04 Latest
 1. Hosts File
 2. Install/Config Mysql
     ## Run command
-        sudo apt-get install mysql-client mysql-server -y
+        sudo apt-get install mysql-client mysql-server -y && sudo apt-get update && sudo apt-get upgrade
     ## Update Bind Address in Mysql Config
         sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
             Update bind-address 0.0.0.0
@@ -38,8 +38,8 @@ Ubuntu 18.04 Latest
     ## Connect to Mysql
         sudo mysql -u root -p -h localhost
     ## Create users and passwords (CHANGE Identified by fields with default passwords)
-        ALTER USER 'root'@'localhost' IDENTIFIED BY 'abc123';
-        GRANT ALL PRIVILEGES ON *.* TO 'db_app_user'@'%' IDENTIFIED BY 'abc123';
+        ALTER USER 'root'@'localhost' IDENTIFIED BY 'VMware1!';
+        GRANT ALL PRIVILEGES ON *.* TO 'db_app_user'@'%' IDENTIFIED BY 'VMware1!';
         CREATE USER 'haproxy_check'@'%';
         FLUSH PRIVILEGES;
     ## Create Prospect DB
@@ -65,7 +65,7 @@ Ubuntu 18.04 Latest
 1. Hosts File
 2. Install/Config Mysql
     ## Run command
-        sudo apt-get install mysql-client mysql-server -y
+        sudo apt-get install mysql-client mysql-server -y && sudo apt-get update && sudo apt-get upgrade
     ## Update Bind Address in Mysql Config
         sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
             Update bind-address 0.0.0.0
@@ -84,13 +84,6 @@ Ubuntu 18.04 Latest
     ## Restart Mysql Service
         sudo systemctl restart mysql.service
 3. Wavefront Install
-    ## Install
-        sudo curl -L https://toolbelt.treasuredata.com/sh/install-ubuntu-bionic-td-agent3.sh | sh
-    ## Update Config File
-        Navigate to https://github.com/theseanodell/vcs-fitcycle-fluentd
-        Copy and Update config file with necessary parameters - see readme in repo
-    ## Restart tdagent
-        sudo systemctl restart td-agent
 4. Fluentd Setup/Config
     ## Install
         sudo curl -L https://toolbelt.treasuredata.com/sh/install-ubuntu-bionic-td-agent3.sh | sh
