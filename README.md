@@ -10,7 +10,7 @@ Ubuntu 18.04 Latest
         ssh-keygen -b 4096
 4. MySQL Client install
     ## Run command
-        sudo apt-get update && sudo apt-get install mysql-client -y && sudo apt-get update && sudo apt-get upgrade
+        sudo apt-get update && sudo apt-get install mysql-client -y && sudo apt-get update && sudo apt-get upgrade -y
 5. Wavefront Install
 6. Fluentd Setup/Config
     ## Install td-agent
@@ -29,7 +29,7 @@ Ubuntu 18.04 Latest
 1. Hosts File
 2. Install/Config Mysql
     ## Run command
-        sudo apt-get install mysql-client mysql-server -y && sudo apt-get update && sudo apt-get upgrade
+        sudo apt-get install mysql-client mysql-server -y && sudo apt-get update && sudo apt-get upgrade -y
     ## Update Bind Address in Mysql Config
         sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
             Update bind-address 0.0.0.0
@@ -65,7 +65,7 @@ Ubuntu 18.04 Latest
 1. Hosts File
 2. Install/Config Mysql
     ## Run command
-        sudo apt-get install mysql-client mysql-server -y && sudo apt-get update && sudo apt-get upgrade
+        sudo apt-get install mysql-client mysql-server -y && sudo apt-get update && sudo apt-get upgrade -y
     ## Update Bind Address in Mysql Config
         sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
             Update bind-address 0.0.0.0
@@ -98,9 +98,12 @@ Ubuntu 18.04 Latest
 Ubuntu 18.04 Latest
 1. Hosts File
 2. Install/Config HAProxy
-        sudo apt-get install haproxy -y
-        replace /etc/haproxy/haproxy.cfg with config_files/haproxy.cfg
+    ## Install
+        sudo apt-get install haproxy -y && sudo apt-get update && sudo apt-get upgrade -y
+          replace /etc/haproxy/haproxy.cfg with config_files/haproxy.cfg
+    ## HAproxy Config Validation
         haproxy -c -f /etc/haproxy/haproxy.cfg
+    ## Service Restart
         sudo service haproxy restart
 3. Wavefront Install
 4. Fluentd Setup/Config
