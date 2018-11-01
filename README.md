@@ -20,7 +20,7 @@ Ubuntu 18.04 Latest
     ## Update Config File
         Navigate to https://github.com/theseanodell/vcs-fitcycle-fluentd
 
-    ### *Copy and Update config file with necessary parameters - see readme in repo*
+    #### *Copy and Update config file with necessary parameters - see readme in repo*
 
     ## Restart tdagent
         sudo systemctl restart td-agent
