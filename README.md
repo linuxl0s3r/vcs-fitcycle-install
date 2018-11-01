@@ -105,10 +105,10 @@ Ubuntu 18.04 Latest
 Ubuntu 18.04 Latest
 1. Hosts File
 2. Install/Config HAProxy
-    sudo apt-get install haproxy -y
-    replace /etc/haproxy/haproxy.cfg with config_files/haproxy.cfg
-    haproxy -c -f /etc/haproxy/haproxy.cfg
-    sudo service haproxy restart
+        sudo apt-get install haproxy -y
+        replace /etc/haproxy/haproxy.cfg with config_files/haproxy.cfg
+        haproxy -c -f /etc/haproxy/haproxy.cfg
+        sudo service haproxy restart
 3. Wavefront Install
 4. Fluentd Setup/Config
     ## Install
@@ -190,10 +190,9 @@ Ubuntu 18.04 Latest
 Ubuntu 18.04 Latest
 1. Hosts File
 2. Install/Config NGINX
-    sudo apt-get update & sudo apt-get upgrade -y
-    sudo apt-get install nginx -y
-    replace /etc/nginx/nginx.conf with config_files/nginx.conf
-    sudo systemctl restart nginx
+        sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install nginx -y && sudo apt-get update && sudo apt-get upgrade -y
+          replace /etc/nginx/nginx.conf with config_files/nginx.conf
+        sudo systemctl restart nginx
 3. Wavefront Install
 4. Fluentd Setup/Config
     ## Install
@@ -210,9 +209,9 @@ Ubuntu 18.04 Latest
 Ubuntu 18.04 Latest
 1. Hosts File
 2. Install/Config NGINX
-    sudo apt-get install nginx -y
-    replace /etc/nginx/nginx.conf with config_files/nginx.conf
-    sudo systemctl restart nginx
+        sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install nginx -y && sudo apt-get update && sudo apt-get upgrade -y
+          replace /etc/nginx/nginx.conf with config_files/nginx.conf
+        sudo systemctl restart nginx
 3. Wavefront Install
 4. Fluentd Setup/Config
     ## Install
@@ -227,7 +226,7 @@ Ubuntu 18.04 Latest
 
 # Web1
 
-1. Break Webq NGINX
+1. Break Web NGINX
 Create cron jobs for Nginx
     ## Installs and configures Cron jobs for Nginx stop / start for WF.
         wget https://github.com/theseanodell/vcs-fitcycle-install/raw/master/generatecron/generatenginxcron
@@ -241,27 +240,27 @@ Create cron jobs for Nginx
 1. Allow Azure Resource Connectivity
 2. Install/Config Mysql
     ## Connect to Mysql
-        sudo mysql -u root -p -h localhost
+          sudo mysql -u "db_user" -p -h "db_instance"
     ## Create users and passwords (CHANGE Identified by fields with default passwords)
-        CREATE USER 'haproxy_check'@'%';
-        CREATE USER 'db_app_user'@'%' IDENTIFIED BY 'VMware1!';
-        GRANT ALL PRIVILEGES ON prospect . * TO 'db_app_user'@'%';
-        FLUSH PRIVILEGES;
+          CREATE USER 'haproxy_check'@'%';
+          CREATE USER 'db_app_user'@'%' IDENTIFIED BY 'VMware1!';
+          GRANT ALL PRIVILEGES ON prospect . * TO 'db_app_user'@'%';
+          FLUSH PRIVILEGES;
     ## Create Prospect DB
-        CREATE DATABASE prospect;
-        Quit;
+          CREATE DATABASE prospect;
+          Quit;
     ## Restore Prospect DB
-        sudo mysql -u root -p prospect < prospect_backup.sql
+          sudo mysql -u "db_user" -p -h "db_instance" prospect < prospect_backup.sql
 
 ##### Hosted MySQL on AWS RDS
 1. Setup and Configure RDS Instance
 2. Config MySQL
     ## Connect to Mysql
-        sudo mysql -u root -p -h "db_instance"
+          sudo mysql -u "db_user" -p -h "db_instance"
     ## Create users and passwords (CHANGE Identified by fields with default passwords)
-        CREATE USER 'haproxy_check'@'%';
-        CREATE USER 'db_app_user'@'%' IDENTIFIED BY 'VMware1!';
-        GRANT ALL PRIVILEGES ON prospect . * TO 'db_app_user'@'%';
-        FLUSH PRIVILEGES;
+          CREATE USER 'haproxy_check'@'%';
+          CREATE USER 'db_app_user'@'%' IDENTIFIED BY 'VMware1!';
+          GRANT ALL PRIVILEGES ON prospect . * TO 'db_app_user'@'%';
+          FLUSH PRIVILEGES;
     ## Restore Prospect DB
-        sudo mysql -h "db_instance" -u db_app_user -p prospect < prospect_backup.sql
+          sudo mysql -h "db_instance" -u db_app_user -p prospect < prospect_backup.sql
