@@ -20,7 +20,7 @@ Ubuntu 18.04 Latest
     ## Update Config File
         Navigate to https://github.com/theseanodell/vcs-fitcycle-fluentd
 
-    #### *Copy and Update config file with necessary parameters - see readme in repo*
+    ##### *Copy and Update config file with necessary parameters - see readme in repo*
 
     ## Restart tdagent
         sudo systemctl restart td-agent
@@ -35,7 +35,7 @@ Ubuntu 18.04 Latest
     ## Update Bind Address in Mysql Config
         sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
 
-    ### *Update bind-address 0.0.0.0*
+    #### *Update bind-address 0.0.0.0*
 
     ## Connect to Mysql
         sudo mysql -u root -p -h localhost
@@ -60,7 +60,7 @@ Ubuntu 18.04 Latest
     ## Update Config File
         Navigate to https://github.com/theseanodell/vcs-fitcycle-fluentd
 
-    ### *Copy and Update config file with necessary parameters - see readme in repo*
+    #### *Copy and Update config file with necessary parameters - see readme in repo*
 
     ## Restart tdagent
         sudo systemctl restart td-agent
@@ -75,7 +75,7 @@ Ubuntu 18.04 Latest
     ## Update Bind Address in Mysql Config
         sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
 
-    ### *Update bind-address 0.0.0.0*
+    #### *Update bind-address 0.0.0.0*
 
     ## Connect to Mysql
         sudo mysql -u root -p -h localhost
@@ -98,7 +98,7 @@ Ubuntu 18.04 Latest
     ## Update Config File
         Navigate to https://github.com/theseanodell/vcs-fitcycle-fluentd
 
-    ### *Copy and Update config file with necessary parameters - see readme in repo*
+    #### *Copy and Update config file with necessary parameters - see readme in repo*
 
     ## Restart tdagent
         sudo systemctl restart td-agent
@@ -111,7 +111,7 @@ Ubuntu 18.04 Latest
     ## Install
         sudo apt-get install haproxy -y && sudo apt-get update && sudo apt-get upgrade -y
 
-    ### *Replace /etc/haproxy/haproxy.cfg with config_files/haproxy.cfg*
+    #### *Replace /etc/haproxy/haproxy.cfg with config_files/haproxy.cfg*
 
     ## HAproxy Config Validation
         haproxy -c -f /etc/haproxy/haproxy.cfg
@@ -124,12 +124,12 @@ Ubuntu 18.04 Latest
     ## Update Config File
         Navigate to https://github.com/theseanodell/vcs-fitcycle-fluentd
 
-    ### *Copy and Update config file with necessary parameters - see readme in repo*
+    #### *Copy and Update config file with necessary parameters - see readme in repo*
 
     ## Restart tdagent
         sudo systemctl restart td-agent
 
-#### Test Remote connectivity to MySQL Servers (Directly and via HAproxy)
+##### Test Remote connectivity to MySQL Servers (Directly and via HAproxy)
 
 ``mysql -u db_app_user -h db1 -p``
 ``mysql -u db_app_user -h db2 -p``
@@ -147,7 +147,7 @@ Ubuntu 18.04 Latest
     ## Update Config File
         Navigate to https://github.com/theseanodell/vcs-fitcycle-fluentd
 
-    ### *Copy and Update config file with necessary parameters - see readme in repo*
+    #### *Copy and Update config file with necessary parameters - see readme in repo*
 
     ## Restart tdagent
         sudo systemctl restart td-agent
@@ -164,7 +164,7 @@ Ubuntu 18.04 Latest
     ## Update Config File
         Navigate to https://github.com/theseanodell/vcs-fitcycle-fluentd
 
-    ### *Copy and Update config file with necessary parameters - see readme in repo*
+    #### *Copy and Update config file with necessary parameters - see readme in repo*
 
     ## Restart tdagent
         sudo systemctl restart td-agent
@@ -181,7 +181,7 @@ Ubuntu 18.04 Latest
     ## Update Config File
         Navigate to https://github.com/theseanodell/vcs-fitcycle-fluentd
 
-    ### *Copy and Update config file with necessary parameters - see readme in repo*
+    #### *Copy and Update config file with necessary parameters - see readme in repo*
 
     ## Restart tdagent
         sudo systemctl restart td-agent
@@ -198,7 +198,7 @@ Ubuntu 18.04 Latest
     ## Update Config File
         Navigate to https://github.com/theseanodell/vcs-fitcycle-fluentd
 
-    ### *Copy and Update config file with necessary parameters - see readme in repo*
+    #### *Copy and Update config file with necessary parameters - see readme in repo*
 
     ## Restart tdagent
         sudo systemctl restart td-agent
@@ -210,7 +210,7 @@ Ubuntu 18.04 Latest
 2. Install/Config NGINX
         sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install nginx -y && sudo apt-get update && sudo apt-get upgrade -y
 
-    ### *Replace /etc/nginx/nginx.conf with config_files/nginx.conf*
+    #### *Replace /etc/nginx/nginx.conf with config_files/nginx.conf*
 
         sudo systemctl restart nginx
 3. Wavefront Install
@@ -220,7 +220,7 @@ Ubuntu 18.04 Latest
     ## Update Config File
         Navigate to https://github.com/theseanodell/vcs-fitcycle-fluentd
 
-    ### *Copy and Update config file with necessary parameters - see readme in repo*
+    #### *Copy and Update config file with necessary parameters - see readme in repo*
 
     ## Restart tdagent
         sudo systemctl restart td-agent
@@ -233,7 +233,7 @@ Ubuntu 18.04 Latest
 2. Install/Config NGINX
         sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install nginx -y && sudo apt-get update && sudo apt-get upgrade -y
 
-    ### *Replace /etc/nginx/nginx.conf with config_files/nginx.conf*
+    #### *Replace /etc/nginx/nginx.conf with config_files/nginx.conf*
 
         sudo systemctl restart nginx
 3. Wavefront Install
@@ -243,12 +243,12 @@ Ubuntu 18.04 Latest
     ## Update Config File
         Navigate to https://github.com/theseanodell/vcs-fitcycle-fluentd
 
-    ### *Copy and Update config file with necessary parameters - see readme in repo*
+    #### *Copy and Update config file with necessary parameters - see readme in repo*
 
     ## Restart tdagent
         sudo systemctl restart td-agent
 
-#### Problem Modifications
+##### Problem Modifications
 
 # Web1
 
@@ -261,7 +261,7 @@ Create cron jobs for Nginx
 2.
 
 
-##### Hosted MySQL on Azure
+###### Hosted MySQL on Azure
 
 1. Allow Azure Resource Connectivity
 2. Install/Config Mysql
@@ -278,7 +278,7 @@ Create cron jobs for Nginx
     ## Restore Prospect DB
           sudo mysql -u "db_user" -p -h "db_instance" prospect < prospect_backup.sql
 
-##### Hosted MySQL on AWS RDS
+###### Hosted MySQL on AWS RDS
 1. Setup and Configure RDS Instance
 2. Config MySQL
     ## Connect to Mysql
