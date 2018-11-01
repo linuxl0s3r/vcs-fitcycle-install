@@ -19,7 +19,7 @@ Ubuntu 18.04 Latest
         sudo /usr/sbin/td-agent-gem install fluent-plugin-out-http-ext
     ## Update Config File
         Navigate to https://github.com/theseanodell/vcs-fitcycle-fluentd
-        Copy and Update config file with necessary parameters - see readme in repo
+        **Copy and Update config file with necessary parameters - see readme in repo**
     ## Restart tdagent
         sudo systemctl restart td-agent
 
@@ -32,7 +32,7 @@ Ubuntu 18.04 Latest
         sudo apt-get install mysql-client mysql-server -y && sudo apt-get update && sudo apt-get upgrade -y
     ## Update Bind Address in Mysql Config
         sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
-            Update bind-address 0.0.0.0
+        **Update bind-address 0.0.0.0**
     ## Connect to Mysql
         sudo mysql -u root -p -h localhost
     ## Connect to Mysql
